@@ -1,77 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <!-- Meta tags Obrigatórias -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/estilo.css">
- 
-    <title>Contador</title>
-  </head>
-  <body>
+<head>
+  <!-- Meta tags Obrigatórias -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <div class="mx-auto text-center">    
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <style>
+    body {
+      background-color: rgba(209, 200, 200, 0.685);
+      text-align: center;
+      font-family: Comic Sans MS, Comic Sans, cursive;
+    }
+
+    #principal {
+      font-family: Comic Sans MS, Comic Sans, cursive;
+      ;
+      color: #fff;
+      display: inline-block;
+      font-weight: 100;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    h1 {
+      color: rgb(0, 0, 0);
+      font-weight: 100;
+      margin: 40px 0px 20px;
+    }
+
+    #principal div {
+      padding: 10px;
+      border-radius: 3px;
+      background: rgb(19, 40, 158);
+      display: inline-block;
+    }
+
+    #principal div span {
+      padding: 15px;
+      border-radius: 3px;
+      background: rgba(19, 40, 158, 0.575);
+      display: inline-block;
+    }
+
+    .smalltext {
+      padding-top: 5px;
+      font-size: 16px;
+    }
+  </style>
+
+  <title>Contador</title>
+</head>
+
+<body>
+
+  <div class="mx-auto text-center">
     <img src="imagens/vigor.png" width="">
   </div>
   <h1>
-    
+
     Projeto 5S<br>
     Unidade Lima Duarte<br>
-    Faltam 
+    Faltam
 
   </h1>
 
-    <div id="principal">
-        
-      <div>
-        <span class="dias" id="dias"></span>
-        <div class="smalltext">Dias</div>
-      </div>
+  <div id="principal">
 
-      <div>
-        <span class="horas" id="horas"></span>
-        <div class="smalltext">Horas</div>
-      </div>
+    <div>
+      <span class="dias" id="dias"></span>
+      <div class="smalltext">Dias</div>
+    </div>
 
-      <div>
-        <span class="minutos" id="minutos"></span>
-        <div class="smalltext">Minutos</div>
-      </div>
-      <div>
-        <span class="segundos" id="segundos"></span>
-        <div class="smalltext">Segundos</div>
-      </div>
-      </div>
+    <div>
+      <span class="horas" id="horas"></span>
+      <div class="smalltext">Horas</div>
+    </div>
 
-    <div id="res"></div>
+    <div>
+      <span class="minutos" id="minutos"></span>
+      <div class="smalltext">Minutos</div>
+    </div>
+    <div>
+      <span class="segundos" id="segundos"></span>
+      <div class="smalltext">Segundos</div>
+    </div>
+  </div>
 
-    <!-- JavaScript (Opcional) -->
-    <script>
-      var deadline = new Date("Sept 18, 2022 08:00:00").getTime();
-      var x = setInterval(function() {
+  <div id="res"></div>
+
+  <!-- JavaScript (Opcional) -->
+  <script>
+    var deadline = new Date("Sept 18, 2022 08:00:00").getTime();
+    var x = setInterval(function () {
       var now = new Date().getTime();
       var t = deadline - now;
       var dias = Math.floor(t / (1000 * 60 * 60 * 24));
-      var horas = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+      var horas = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
       var segundos = Math.floor((t % (1000 * 60)) / 1000);
-      document.getElementById("dias").innerHTML =dias;
-      document.getElementById("horas").innerHTML =horas;
-      document.getElementById("minutos").innerHTML = minutos; 
-      document.getElementById("segundos").innerHTML =segundos; 
-          if (t < 0) {
-              clearInterval(x);
-              document.getElementById("res").innerHTML = "CHEGOU O GRANDE DIA";
-              document.getElementById("dias").innerHTML= '0'
-              document.getElementById("horas").innerHTML= '0'
-              document.getElementById("minutos").innerHTML= '0'
-              document.getElementById("segundos").innerHTML= '0'
-          }
-      }, 1000);
-      </script>
+      document.getElementById("dias").innerHTML = dias;
+      document.getElementById("horas").innerHTML = horas;
+      document.getElementById("minutos").innerHTML = minutos;
+      document.getElementById("segundos").innerHTML = segundos;
+      if (t < 0) {
+        clearInterval(x);
+        document.getElementById("res").innerHTML = "CHEGOU O GRANDE DIA";
+        document.getElementById("dias").innerHTML = '0'
+        document.getElementById("horas").innerHTML = '0'
+        document.getElementById("minutos").innerHTML = '0'
+        document.getElementById("segundos").innerHTML = '0'
+      }
+    }, 1000);
+  </script>
 
 
 
@@ -79,9 +124,16 @@
 
 
 
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
