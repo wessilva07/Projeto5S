@@ -1,0 +1,38 @@
+body{
+    background-color: rgba(209, 200, 200, 0.685);
+    text-align: center;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+#principal{
+    font-family: Comic Sans MS, Comic Sans, cursive;;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+h1{
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+    margin: 40px 0px 20px;
+}
+
+#principal div{
+    padding: 10px;
+    border-radius: 3px;
+    background: rgb(19, 40, 158);
+    display: inline-block;
+}
+
+#principal div  span{
+    padding: 15px;
+    border-radius: 3px;
+    background:rgba(19, 40, 158, 0.575);
+    display: inline-block;
+}
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
